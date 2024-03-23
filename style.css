@@ -1,0 +1,120 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: monospace;, sans-serif;
+}
+
+.boxes {
+	height: 100vh;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	display: table;
+	background-attachment: fixed;
+}
+
+#box1 {
+	background-image: url(box1bgi.jpg);
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	padding: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#box1::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	background: linear-gradient(to top,black,transparent);
+}
+
+#box2 {
+	position: relative;
+	padding: 20% 100px;
+	background-color: black;
+}
+
+#box2 > p {
+	color: white;
+	font-size: 150%;
+}
+
+#box3 {
+	background-image: url(box3bgi.jpg);
+	object-fit: cover;
+}
+
+#box3:before {
+	content: test;
+	position: absolute;
+	width: 100%;
+	height: 100px;
+	background: linear-gradient(to bottom, black, transparent);
+}
+
+h1 {
+	font-family: sans-serif;
+	font-size: 48px;
+	color: #fff;
+	margin: 0px;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#cloud1 {
+	margin-top: -1000px;
+	position: absolute;
+	transform: translateZ(-3);
+	//z-index: -3;
+	width: 800px;
+	opacity: 0.6;
+	animation: slideRight 100s infinite;
+	filter: drop-shadow(5px 5px 5px #222222);
+}
+
+#cloud2 {
+	position: absolute;
+	margin-top: -1200px;
+	right: 10px;
+	transform: translateZ(-1);
+	//z z-index: -1;
+	width: 500px;
+	opacity: 0.8;
+	animation: slideLeft 50s infinite;
+	filter: drop-shadow(5px 5px 5px #222222);
+}
+
+@keyframes slideRight {
+	0% {
+		transform: translateX(0%);
+	}
+	50% {
+		transform: translateX(50%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}
+
+@keyframes slideLeft {
+	0% {
+		transform: translateX(0%);		
+	}
+	50% {
+		transform: translateX(-50%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
